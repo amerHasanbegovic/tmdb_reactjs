@@ -1,0 +1,6 @@
+export const GET_MOVIES = 'GET_MOVIES'
+export const GET_MOVIE = 'GET_MOVIE'
+export const MOVIE_LOADING = 'MOVIE_LOADING'
+export const MOVIES_LOADING = 'MOVIES_LOADING'
+export const MOVIE_NOT_FOUND = 'MOVIE_NOT_FOUND'
+export const GET_ERRORS = 'GET_ERRORS'
