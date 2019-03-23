@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux'
 import movieReducer from './movieReducer'
-import errorReducer from './errorReducer'
+import tvshowReducer from './tvshowReducer'
 
 export default combineReducers({
-    movie: movieReducer,
-    error: errorReducer
+    movies: movieReducer,
+    tvshows: tvshowReducer,
 })

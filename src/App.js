@@ -8,6 +8,9 @@ import Home from './components/Home'
 import Movies from './components/Movies'
 import Tvshows from './components/Tvshows'
 import People from './components/People'
+import Footer from './components/Footer'
+import MovieDetails from './components/MovieDetails'
+import TvShowDetails from './components/TvShowDetails'
 import store from './store'
 
 class App extends Component {
@@ -22,7 +25,10 @@ class App extends Component {
               <Route exact path='/movies' component={Movies} />
               <Route exact path='/tvshows' component={Tvshows} />
               <Route exact path='/people' component={People} />
+              <Route exact path='/movies/:id' component={MovieDetails} />
+              <Route exact path='/tvshows/:id' component={TvShowDetails} />
             </Switch>
+            <Footer />
           </div>
         </Router>
       </Provider>

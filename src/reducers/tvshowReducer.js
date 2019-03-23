@@ -1,0 +1,39 @@
+import {
+  GET_TVSHOW,
+  TVSHOW_LOADING,
+  TVSHOWS_LOADING,
+  GET_LATEST_TVSHOWS,
+  GET_ON_THE_AIR_TVSHOWS,
+  GET_POPULAR_TVSHOWS,
+  GET_TOP_RATED_TVSHOWS
+} from '../actions/types'
+
+const initialState = {
+  popularTvshows: null,
+  topRatedTvshows: null,
+  onTheAirTvshows: null,
+  latestTvshows: null,
+  tvshow: null,
+  loading: false
+}
+
+export default function (state = initialState, action) {
+  switch (action.type) {
+    case TVSHOW_LOADING:
+      return { ...state, loading: true }
+    case TVSHOWS_LOADING:
+      return { ...state, loading: true }
+    case GET_LATEST_TVSHOWS:
+      return { ...state, LatestTvshows: action.data, loading: false }
+    case GET_POPULAR_TVSHOWS:
+      return { ...state, popularTvshows: action.data, loading: false }
+    case GET_TOP_RATED_TVSHOWS:
+      return { ...state, topRatedTvshows: action.data, loading: false }
+    case GET_ON_THE_AIR_TVSHOWS:
+      return { ...state, onTheAirTvshows: action.data, loading: false }
+    case GET_TVSHOW:
+      return { ...state, tvshow: action.data, loading: false }
+    default:
+      return state
+  }
+}
