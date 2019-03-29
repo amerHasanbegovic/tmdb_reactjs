@@ -1,7 +1,6 @@
 import axios from 'axios'
 import {
   GET_SINGLE_TVSHOW,
-  GET_LATEST_TVSHOWS,
   GET_TOP_RATED_TVSHOWS,
   GET_POPULAR_TVSHOWS,
   GET_ON_THE_AIR_TVSHOWS,
@@ -21,21 +20,6 @@ export const loadingTvshow = () => {
   }
 }
 
-export const getLatestTvshows = () => dispatch => {
-  dispatch(loadingTvshows())
-  axios
-    .get("https://api.themoviedb.org/3/tv/latest?api_key=300e528256846427957c1b1f398931b8&language=en-US")
-    .then(res => dispatch({
-      type: GET_LATEST_TVSHOWS,
-      data: res.data
-    }))
-    .catch(err =>
-      dispatch({
-        type: GET_LATEST_TVSHOWS,
-        data: null
-      })
-    )
-}
 export const getTopRatedTvshows = () => dispatch => {
   dispatch(loadingTvshows())
   axios

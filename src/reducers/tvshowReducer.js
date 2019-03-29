@@ -2,7 +2,6 @@ import {
   GET_SINGLE_TVSHOW,
   TVSHOW_LOADING,
   TVSHOWS_LOADING,
-  GET_LATEST_TVSHOWS,
   GET_ON_THE_AIR_TVSHOWS,
   GET_POPULAR_TVSHOWS,
   GET_TOP_RATED_TVSHOWS
@@ -12,7 +11,6 @@ const initialState = {
   popularTvshows: null,
   topRatedTvshows: null,
   onTheAirTvshows: null,
-  latestTvshows: null,
   tvshow: null,
   loading: false
 }
@@ -23,8 +21,6 @@ export default function (state = initialState, action) {
       return { ...state, loading: true }
     case TVSHOWS_LOADING:
       return { ...state, loading: true }
-    case GET_LATEST_TVSHOWS:
-      return { ...state, LatestTvshows: action.data, loading: false }
     case GET_POPULAR_TVSHOWS:
       return { ...state, popularTvshows: action.data, loading: false }
     case GET_TOP_RATED_TVSHOWS:

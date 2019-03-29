@@ -1,11 +1,9 @@
 import axios from 'axios'
 import {
   GET_SINGLE_MOVIE,
-  GET_LATEST_MOVIES,
   GET_TOP_RATED_MOVIES,
   GET_POPULAR_MOVIES,
   GET_NOW_PLAYING_MOVIES,
-  GET_UPCOMING_MOVIES,
   MOVIE_LOADING,
   MOVIES_LOADING,
 } from './types'
@@ -22,22 +20,6 @@ export const loadingMovie = () => {
   }
 }
 
-// get Movies
-export const getLatestMovies = () => dispatch => {
-  dispatch(loadingMovies())
-  axios
-    .get("https://api.themoviedb.org/3/movie/latest?api_key=300e528256846427957c1b1f398931b8&language=en-US")
-    .then(res => dispatch({
-      type: GET_LATEST_MOVIES,
-      data: res.data
-    }))
-    .catch(err =>
-      dispatch({
-        type: GET_LATEST_MOVIES,
-        data: null
-      })
-    )
-}
 export const getTopRatedMovies = () => dispatch => {
   dispatch(loadingMovies())
   axios
@@ -83,21 +65,7 @@ export const getNowPlayingMovies = () => dispatch => {
       })
     )
 }
-export const getUpcomingMovies = () => dispatch => {
-  dispatch(loadingMovies())
-  axios
-    .get("https://api.themoviedb.org/3/movie/upcoming?api_key=300e528256846427957c1b1f398931b8&language=en-US")
-    .then(res => dispatch({
-      type: GET_UPCOMING_MOVIES,
-      data: res.data
-    }))
-    .catch(err =>
-      dispatch({
-        type: GET_UPCOMING_MOVIES,
-        data: null
-      })
-    )
-}
+
 export const getSingleMovie = id => dispatch => {
   dispatch(loadingMovie())
   axios

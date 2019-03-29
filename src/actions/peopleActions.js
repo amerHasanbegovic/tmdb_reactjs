@@ -1,8 +1,6 @@
 import axios from 'axios'
 import {
-  GET_SINGLE_PERSON,
   GET_POPULAR_PEOPLE,
-  PERSON_LOADING,
   PEOPLE_LOADING,
   SEARCHING_PEOPLE
 } from './types'
@@ -11,11 +9,6 @@ import {
 export const loadingPeople = () => {
   return {
     type: PEOPLE_LOADING
-  }
-}
-export const loadingPerson = () => {
-  return {
-    type: PERSON_LOADING
   }
 }
 
@@ -56,26 +49,6 @@ export const searchPeople = query => dispatch => {
     .catch(err =>
       dispatch({
         type: SEARCHING_PEOPLE,
-        data: null
-      })
-    )
-}
-
-export const getSinglePerson = id => dispatch => {
-  dispatch(loadingPerson())
-  axios
-    .get(
-      `https://api.themoviedb.org/3/person/${id}?api_key=300e528256846427957c1b1f398931b8&language=en-US`
-    )
-    .then(res =>
-      dispatch({
-        type: GET_SINGLE_PERSON,
-        data: res.data
-      })
-    )
-    .catch(err =>
-      dispatch({
-        type: GET_SINGLE_PERSON,
         data: null
       })
     )
