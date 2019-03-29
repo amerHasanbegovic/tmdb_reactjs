@@ -12,6 +12,7 @@ import Footer from './components/Footer'
 import MovieDetails from './components/MovieDetails'
 import TvShowDetails from './components/TvShowDetails'
 import store from './store'
+import NotFound from './components/NotFound';
 
 class App extends Component {
   render () {
@@ -27,6 +28,7 @@ class App extends Component {
               <Route exact path='/movies/:id' component={MovieDetails} />
               <Route exact path='/tvshows/:id' component={TvShowDetails} />
               <Route exact path='/people' component={People} />
+              <Route path="**" component={NotFound} />
             </Switch>
             <Footer />
           </div>

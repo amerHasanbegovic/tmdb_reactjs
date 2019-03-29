@@ -41,7 +41,8 @@ class PeopleItem extends Component {
 }
 
 PeopleItem.propTypes = {
-  person: PropTypes.object.isRequired
+  person: PropTypes.object,
+  search: PropTypes.object
 }
 
 export default PeopleItem
