@@ -1,5 +1,5 @@
 import {
-  GET_TVSHOW,
+  GET_SINGLE_TVSHOW,
   TVSHOW_LOADING,
   TVSHOWS_LOADING,
   GET_LATEST_TVSHOWS,
@@ -31,7 +31,7 @@ export default function (state = initialState, action) {
       return { ...state, topRatedTvshows: action.data, loading: false }
     case GET_ON_THE_AIR_TVSHOWS:
       return { ...state, onTheAirTvshows: action.data, loading: false }
-    case GET_TVSHOW:
+    case GET_SINGLE_TVSHOW:
       return { ...state, tvshow: action.data, loading: false }
     default:
       return state

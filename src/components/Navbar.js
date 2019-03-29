@@ -9,7 +9,7 @@ class Navbar extends Component {
         <nav className='navbar navbar-expand-lg navbar-dark bg-dark'>
           <div className='container'>
             <Link to='/' className='navbar-brand'>
-              <i className='fa fa-film' title='Movie&Tv'/>
+              <i className='fa fa-film' style={{color: '#ffffff'}} title='Movie&Tv'/>
             </Link>
             <button
               className='navbar-toggler hidden-lg-up'

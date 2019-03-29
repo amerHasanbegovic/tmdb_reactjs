@@ -17,24 +17,34 @@ class Home extends Component {
     const { nowPlayingMovies, loading } = this.props.movies
     const { onTheAirTvshows } = this.props.tvshows
     let movie, tvshow
-    
-    if(nowPlayingMovies === null || loading || Object.keys(nowPlayingMovies).length === 0)
-    {movie = <Spinner/>} else {
+
+    if (
+      nowPlayingMovies === null ||
+      loading ||
+      Object.keys(nowPlayingMovies).length === 0
+    ) {
+      movie = <Spinner />
+    } else {
       movie = nowPlayingMovies['results']
         .slice(0, 12)
         .map(item => <HomeNowPlaying movie={item} key={item.id} />)
     }
 
-    if(onTheAirTvshows === null || loading || Object.keys(onTheAirTvshows).length === 0)
-    {tvshow = <Spinner/>} else {
+    if (
+      onTheAirTvshows === null ||
+      loading ||
+      Object.keys(onTheAirTvshows).length === 0
+    ) {
+      tvshow = <Spinner />
+    } else {
       tvshow = onTheAirTvshows['results']
         .slice(0, 12)
         .map(item => <HomeNowPlaying tvshow={item} key={item.id} />)
     }
-    
+
     return (
-        <div className='col-lg-12'>
-      <div className='Home'>
+      <div className='col-lg-12'>
+        <div className='Home'>
           <div className='container mt-5'>
             <h1 className='text-center display-3'>We Have All The Movies</h1>
             <p className='lead text-center mt-3'>
@@ -59,31 +69,39 @@ class Home extends Component {
 
         <div className='container mt-5 mb-5'>
           <div className='row'>
-            <div className="col-md-6 mb-3">
+            <div className='col-md-6 mb-3'>
               <h4>In Cinemas</h4>
-              <div className='d-flex flex-row flex-xl-wrap flex-lg-wrap flex-md-wrap flex-sm-wrap mt-3'>{movie}</div>
-              <div className="text-justify mt-1">
-              <small>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat.
+              <div className='d-flex flex-row flex-xl-wrap flex-lg-wrap flex-md-wrap flex-sm-wrap mt-3'>
+                {movie}
+              </div>
+              <div className='text-justify mt-1'>
+                <small>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                  laboris nisi ut aliquip ex ea commodo consequat.
                 </small>
               </div>
-              <Link to="/movies" className="btn btn-secondary mt-3">More info</Link>
+              <Link to='/movies' className='btn btn-secondary mt-3'>
+                More info
+              </Link>
             </div>
-            <div className="col-md-6 mb-3">
+            <div className='col-md-6 mb-3'>
               <h4>On TV</h4>
-              <div className='d-flex flex-row flex-xl-wrap flex-lg-wrap flex-md-wrap flex-sm-wrap mt-3'>{tvshow}</div>
-              <div className="text-justify mt-1">
-              <small>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat.
+              <div className='d-flex flex-row flex-xl-wrap flex-lg-wrap flex-md-wrap flex-sm-wrap mt-3'>
+                {tvshow}
+              </div>
+              <div className='text-justify mt-1'>
+                <small>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                  laboris nisi ut aliquip ex ea commodo consequat.
                 </small>
               </div>
-              <Link to="/tvshows" className="btn btn-secondary mt-3">More info</Link>
+              <Link to='/tvshows' className='btn btn-secondary mt-3'>
+                More info
+              </Link>
             </div>
           </div>
         </div>
